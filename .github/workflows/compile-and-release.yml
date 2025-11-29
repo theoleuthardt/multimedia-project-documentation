@@ -45,4 +45,4 @@ jobs:
             LaTeX document compiled on ${{ steps.date.outputs.date }}
             This release contains the compiled PDF of the project documentation.
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN }}
