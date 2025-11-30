@@ -201,17 +201,16 @@
 
 \loadglsentries{glossar.tex}
 
-\newcommand{\type}{Praxistransferbericht I/II/III oder Studienprojekt I/II} % oder Bachelorarbeit
-\newcommand{\topic}{Titel}
-\newcommand{\subtopic}{Untertitel}
-\newcommand{\studentName}{Vorname Name} % mehrere Autoren: {Vorname Name, Vorname Name} etc
-\newcommand{\matrikelNr}{7220XXXXXXX}   % mehrere Autoren: {7220XXXXXXX, 7220XXXXXXX}
-\newcommand{\company}{Unternehmen}
-\newcommand{\jahrgang}{20XX}
+\newcommand{\type}{Multimedia-Projekt} % oder Bachelorarbeit
+\newcommand{\topic}{Projektdokumentation zum Video-Review}
+\newcommand{\subtopic}{Ein Comedy-Review zum Indie-Soulslike "White Lavender"}
+\newcommand{\studentName}{Theo Leuthardt, Domenik Wilhelm} % mehrere Autoren: {Vorname Name, Vorname Name} etc
+\newcommand{\matrikelNr}{72205844868, 77207300494}   % mehrere Autoren: {7220XXXXXXX, 7220XXXXXXX}
+\newcommand{\jahrgang}{2025}
 \newcommand{\fachbereich}{Duales Studium Wirtschaft · Technik}
 \newcommand{\studiengang}{Informatik}
-\newcommand{\betreuerHS}{(Akademischer Titel) Vorname Name}
-\newcommand{\betreuerUnt}{(Akademischer Titel) Vorname Name}
+\newcommand{\module}{Multimedia}
+\newcommand{\betreuerHS}{(Prof. Dr.) Gerit Kalkbrenner}
 \newcommand{\wordCount}{XXXX}
 
 
@@ -246,23 +245,22 @@
 	\textbf{\normalsize{}} & \normalsize{}  \tabularnewline
 	\textbf{\normalsize{Name:}} & \normalsize{\studentName}  \tabularnewline
  	\textbf{\normalsize{Matrikelnummer:}} & \normalsize{\matrikelNr}  \tabularnewline
-	\textbf{\normalsize{Ausbildungsbetrieb:}} & \normalsize{\company}  \tabularnewline
 	\textbf{\normalsize{Studienjahrgang:}} & \normalsize{\jahrgang}  \tabularnewline
 	\textbf{\normalsize{Fachbereich:}} & \normalsize{\fachbereich} \tabularnewline
 	\textbf{\normalsize{Studiengang:}} & \normalsize{\studiengang} \tabularnewline
+    \textbf{\normalsize{Modul:}} & \normalsize{\module}  \tabularnewline
 	\textbf{\normalsize{Betreuer/in Hochschule:}} & \normalsize{\betreuerHS} \tabularnewline
-	\textbf{\normalsize{Betreuer/in Unternehmen:}} & \normalsize{\betreuerUnt} \tabularnewline
     \textbf{\normalsize{Anzahl der Wörter:}} & \normalsize{\wordCount} \tabularnewline
     \tabularnewline
     \tabularnewline
 	\end{tabular}
     % ein Autor:
-    \begin{tabular}{p{15em} p{1em} p{10em}}
-        \normalsize{Vom Ausbildungsleiter zur Kenntnis genommen:} \tabularnewline
-        \tabularnewline
-        \hspace{4cm} && \hspace{4cm}\\\cline{1-1}\cline{3-3}
-        \normalsize{AL Vorname Name} && \normalsize{DEIN Vorname Name} 
-    \end{tabular}
+    %\begin{tabular}{p{15em} p{1em} p{10em}}
+    %    \normalsize{Vom Ausbildungsleiter zur Kenntnis genommen:} \tabularnewline
+    %    \tabularnewline
+    %    \hspace{4cm} && \hspace{4cm}\\\cline{1-1}\cline{3-3}
+    %    \normalsize{AL Vorname Name} && \normalsize{DEIN Vorname Name}
+    %\end{tabular}
     % mehrere Autoren
     %%%%%%%%%%%%%%%%%
     %\begin{tabular}{p{8em} p{1em} p{7em} p{1em} p{7em}}
@@ -277,7 +275,6 @@
 \titlehead{\begin{center}
     \includegraphics[height=0.04\textheight]{bilder/HWR.png}
     \hfill
-    \includegraphics[height=0.04\textheight]{bilder/FUBIT.png} % hier DEIN Firmenlogo
     \end{center}
     }
 
@@ -288,8 +285,8 @@
 \pagenumbering{Roman}
 
 % Abstract (ausgelagert in extra File)
-\include{kapitel/01abstract}
-\newpage
+% \include{kapitel/01abstract}
+% \newpage
 
 % Inhaltsverzeichnis
 \tableofcontents{}
@@ -306,48 +303,48 @@
 \clearpage
 
 % Tabellenverzeichnis -> auskommentieren, wenn keine Tabellen verwendet wurden
-\listoftables
-\clearpage
+% \listoftables
+% \clearpage
 
 % Codeverzeichnis -> auskommentieren, wenn keine Codeausschnitte verwendet wurden
-\lstlistoflistings
-\clearpage
+% \lstlistoflistings
+% \clearpage
 
 % Akronyme extra
-\addcontentsline{toc}{chapter}{Akronyme}
-\printnoidxglossary[type=\acronymtype]
-\clearpage
+% \addcontentsline{toc}{chapter}{Akronyme}
+% \printnoidxglossary[type=\acronymtype]
+% \clearpage
 
 % Glossar
-\addcontentsline{toc}{chapter}{Glossar}
-\printnoidxglossary
-\clearpage
+% \addcontentsline{toc}{chapter}{Glossar}
+% \printnoidxglossary
+% \clearpage
 
 % arabische Seitenzahlen sobalds losgeht
 \pagenumbering{arabic}
 
 % alle Kapitel schick ausgelagert
-\include{kapitel/02aufzählungen}
-\include{kapitel/03akronyme}
-\include{kapitel/04quellen}
-\include{kapitel/05abbildungen}
-\include{kapitel/06tabellen}
-\include{kapitel/07gliederung}
+\include{kapitel/01projektbeschreibung}
+\include{kapitel/02zielgruppe}
+\include{kapitel/03nachricht}
+\include{kapitel/04medienpsychologie}
+\include{kapitel/05entwurf}
+\include{kapitel/06drehbuch}
+\include{kapitel/07technik}
+\include{kapitel/08screendumps}
 
-\newpage
-\bibliography{literatur}
-\nocite{*}  % listet ALLE Quellen in literatur.bib, auch wenn sie nicht zitiert wurden -> ergibt Sinn, auszukommentieren
-\bibliographystyle{hwrbib}
+% \newpage
+% \bibliography{literatur}
+% \nocite{*}  % listet ALLE Quellen in literatur.bib, auch wenn sie nicht zitiert wurden -> ergibt Sinn, auszukommentieren
+% \bibliographystyle{hwrbib}
 
 % KI-Verzeichnis
-\include{kapitel/20ki}
+% \include{kapitel/20ki}
 
 % wenn euer Anhang viele Seiten hat, ergibt es Sinn, zu alphabetischen Seitenzahlen zu "wechseln"
 %%%%%%%%%%%%%%%%%%%%%%
 % \pagenumbering{Alph}
 %%%%%%%%%%%%%%%%%%%%%%
-% Anhang
-\include{kapitel/21anhang}
 
 % Ehrenwörtliche Erklärung
 \include{kapitel/22erklaerung}
