@@ -311,14 +311,14 @@
 % \clearpage
 
 % Akronyme extra
-% \addcontentsline{toc}{chapter}{Akronyme}
-% \printnoidxglossary[type=\acronymtype]
-% \clearpage
+\addcontentsline{toc}{chapter}{Akronyme}
+\printnoidxglossary[type=\acronymtype]
+\clearpage
 
 % Glossar
-% \addcontentsline{toc}{chapter}{Glossar}
-% \printnoidxglossary
-% \clearpage
+\addcontentsline{toc}{chapter}{Glossar}
+\printnoidxglossary
+\clearpage
 
 % arabische Seitenzahlen sobalds losgeht
 \pagenumbering{arabic}
@@ -333,13 +333,12 @@
 \include{kapitel/07technik}
 \include{kapitel/08screendumps}
 
-% \newpage
-% \bibliography{literatur}
-% \nocite{*}  % listet ALLE Quellen in literatur.bib, auch wenn sie nicht zitiert wurden -> ergibt Sinn, auszukommentieren
-% \bibliographystyle{hwrbib}
+\newpage
+\bibliography{literatur}
+\bibliographystyle{hwrbib}
 
 % KI-Verzeichnis
-% \include{kapitel/20ki}
+\include{kapitel/20ki}
 
 % wenn euer Anhang viele Seiten hat, ergibt es Sinn, zu alphabetischen Seitenzahlen zu "wechseln"
 %%%%%%%%%%%%%%%%%%%%%%
