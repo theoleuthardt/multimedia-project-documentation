@@ -1,0 +1,65 @@
+\chapter{Technische Entscheidungen}\label{ch:technik}
+Die technische Realisierung des Video-Reviews basiert auf professionellen Werkzeugen und Formaten, die eine hohe Qualität und effiziente Zusammenarbeit gewährleisten.
+
+\section{Videobearbeitung}
+
+\subsection{Editor-Wahl}
+Als primäres Bearbeitungswerkzeug wird DaVinci Resolve eingesetzt.
+Diese Wahl wird durch folgende Faktoren begründet: DaVinci Resolve bietet umfassende Bearbeitungsfunktionen für Schnitt, Color Grading und Effekte, die für ein professionelles Review erforderlich sind.
+Die kostenlose Version von DaVinci Resolve bietet bereits einen umfangreichen Funktionsumfang, der für dieses Projekt ausreichend ist.
+Das Programm ermöglicht einen effizienten Workflow von der Rohschnitt-Phase über das Color Grading bis zur finalen Ausgabe.
+
+\subsection{Videoformat}
+Für die Verarbeitung werden die Containerformate \gls{mkv} und \gls{mov} verwendet.
+\gls{mkv} wird bevorzugt für Gameplay-Aufnahmen, Zwischenspeicherungen während der Bearbeitung, hohe Flexibilität bei Codec-Wahl und verlustfreie Qualität.
+\gls{mov} wird verwendet für Kompatibilität mit DaVinci Resolve, professionelle Farbbearbeitung und standardisierte Ausgabeformate.
+
+\section{Audiobearbeitung}
+
+\subsection{Aufnahme-Software}
+Für die Audioaufnahme wird Audacity eingesetzt.
+Diese Open-Source-Software wird aufgrund folgender Eigenschaften gewählt: Audacity ist kostenlos verfügbar und bietet dennoch professionelle Aufnahmemöglichkeiten.
+Die Benutzeroberfläche ist intuitiv und ermöglicht schnelle Aufnahme-Sessions ohne komplexe Einrichtung.
+Grundlegende Audio-Editing-Funktionen wie Normalisierung, Rauschunterdrückung und \gls{eq} sind integriert.
+
+\subsection{Audioformat-Spezifikationen}
+Für die Audioaufnahme werden folgende technische Parameter festgelegt: Die Sample Rate beträgt 48 kHz, das Format ist \gls{flac}, die Kanäle sind Stereo (2.0) und die Bit Depth beträgt 24 Bit.
+Die Begründung der Parameter lautet wie folgt: Diese Sample Rate wird als Standard für Videoproduktionen verwendet und gewährleistet optimale Kompatibilität mit dem Videomaterial \cite{ITU03}.
+Die verlustfreie Kompression erhält die vollständige Audioqualität, während gleichzeitig Speicherplatz eingespart wird.
+Dies ist besonders wichtig für die spätere Bearbeitung und Mixing-Prozesse.
+Eine Stereo-Konfiguration wird für Voice-Over-Aufnahmen als ausreichend erachtet und bietet gute räumliche Präsenz.
+Die höhere Bit-Tiefe gegenüber Standard-16-Bit bietet einen größeren Dynamikumfang und mehr Headroom für die Nachbearbeitung.
+
+\section{Kollaborations-Infrastruktur}
+
+\subsection{Datenspeicherung}
+Für den gemeinsamen Zugriff auf Projekt-Assets wird ein \gls{nas}-Speicher eingesetzt.
+Die Vorteile umfassen zentralisierte Speicherung aller Audio- und Videodateien, gleichzeitigen Zugriff für alle Teammitglieder, automatische Backup-Möglichkeiten, Versionskontrolle bei größeren Dateien und die Vermeidung von Duplizierung großer Mediendateien.
+
+\subsection{Skript-Entwicklung}
+Für die kollaborative Erstellung des Drehbuchs wird Google Docs verwendet.
+Die Begründung umfasst folgende Aspekte: Mehrere Personen können gleichzeitig am Skript arbeiten (Echtzeit-Kollaboration).
+Feedback kann direkt im Dokument gegeben werden (Kommentarfunktion).
+Änderungen sind nachvollziehbar und können rückgängig gemacht werden (Versionsverlauf).
+Der Zugriff von verschiedenen Geräten ist möglich (Plattformunabhängigkeit).
+Keine lokale Softwareinstallation ist erforderlich.
+
+\section{Workflow-Konzept}
+Der technische Workflow wird in folgenden Schritten strukturiert.
+Zunächst erfolgt die Skript-Entwicklung durch gemeinsame Erstellung in Google Docs.
+Anschließend wird die Gameplay-Aufnahme im \gls{mkv}-Format durchgeführt und auf \gls{nas} hochgeladen.
+Die Voice-Over-Aufnahme wird in Audacity mit 48kHz/24Bit \gls{flac} durchgeführt.
+Bei der Audio-Bearbeitung werden Noise Reduction und Normalisierung angewendet sowie der Export als \gls{flac} vorgenommen.
+Beim Video-Assembly werden alle Assets in DaVinci Resolve importiert.
+Der Schnitt basiert auf den Drehbuch-Timings als Rohschnitt.
+Bei der Audio-Sync wird die Synchronisation von Voice-Over und Gameplay durchgeführt.
+Effekte und Overlays werden durch das Hinzufügen von Text-Overlays und Transitions realisiert.
+Falls erforderlich, wird beim Color Grading eine Anpassung der Farbgebung vorgenommen.
+Abschließend erfolgt der finale Export in hochauflösendem Format.
+
+\section{Qualitätssicherung}
+Zur Sicherstellung einer hohen Produktionsqualität werden folgende Maßnahmen implementiert.
+Bezüglich der Audio-Qualität wird vor jeder Aufnahme ein Audio-Test durchgeführt, um Pegel und Rauschunterdrückung zu überprüfen.
+Bezüglich der Video-Qualität wird Gameplay-Material auf ausreichende Framerate und Auflösung geprüft.
+Die Backup-Strategie sieht vor, dass alle Projektdateien redundant auf dem \gls{nas} und lokal gespeichert werden.
+Der Review-Prozess stellt sicher, dass vor dem finalen Export das Video von mehreren Teammitgliedern gesichtet wird.
